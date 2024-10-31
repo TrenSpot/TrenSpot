@@ -10,10 +10,41 @@
     font-family: sans-serif;
     text-decoration: none;
     list-style-type: none;
+    overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6{
     font-family: 'MuseoModerno';
 }
 p{
     font-family: 'Roboto';
+}
+
+/* se repete em todas as telas */
+header{
+    background-color: #126C6A;
+}
+footer{
+    background-color: #303030;
+    color: #B9F2FF;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.cols{
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+}
+.footer_col1, .footer_col2{
+    width: 40%;
+    text-align: justify;
+}
+.footer_col2 > h6{
+    text-align: center;
+}
+.copy{
+    background-color: #202020;
+    color: white;
+    width: 100%;
+    display: flex;
 }
