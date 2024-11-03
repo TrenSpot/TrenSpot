@@ -23,15 +23,21 @@ p {
 
 /* Cabeçalho */
 header {
+    height: 55px;
     background-color: #126C6A;
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 30px 20px 10px; 
+    padding: 20px 20px 10px; 
 }
 .logo {
     width: 33vw;
+    height: 100%;
     cursor: pointer;
+    overflow-x: visible;
+}
+.logo > img{
+    height: 100%;
 }
 nav {
     flex: 1;
@@ -58,12 +64,55 @@ header > input {
     opacity: 0;
 }
 
+/* Corpo */
+body {
+    background-color: #19908D;
+}
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: 
+        url(../img/trilhos_bg1.png), 
+        url(../img/trilhos_bg2.png); 
+    background-repeat: no-repeat, no-repeat; 
+    background-position: top left, bottom right;
+    position: relative;
+    padding: auto;
+}
+main > img{
+    margin-top: auto;
+    margin-bottom: 50px;
+}
+main > button {
+    margin-bottom: auto;
+}
+.main-logo {
+    width: 45%;
+}
+.locate-button {
+    background-color: #B9F2FF;  
+    border: none;
+    border-radius: 20px; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.locate-button > a {
+    color: #FFB347; 
+}
+.locate-button:hover {
+    background-color: #A1D9E8; 
+}
+
 /* Rodapé */
 footer {
     background-color: #303030;
     color: #B9F2FF;
     width: 100%;
-    position: absolute;
     bottom: 0;
 }
 .cols {
