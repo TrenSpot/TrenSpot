@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="TrenSpot: plataforma desenvolvida na FIAP que facilita a navegação no metrô com foco em inclusão social e conteúdos baseados na localização.">
+    <meta name="keywords" content="Metro, Transporte, Localização">
+    <title>Quem Somos</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Passando o tamanho das telas diretamente no link do CSS -->
+    <link rel="stylesheet" href="../assets/css/styleSM.css" media="(max-width: 600px)">
+    <link rel="stylesheet" href="../assets/css/styleMD.css" media="(min-width: 601px) and (max-width: 1024px)">
+    <link rel="stylesheet" href="../assets/css/styleLG.css" media="(min-width: 1025px)">    
+    <link rel="shortcut icon" href="../assets/img/logo.png" type="image/x-icon">
+</head>
+
+<!-- Corpo do Site -->
+<body>
+    <!-- Cabeçalho -->
+    <header role="banner">  
+        <a href="index.html" class="logo"><img src="../assets/img/logo_header.png" alt="logo" title="logo"></a>
+        <span></span>
+        <input type="checkbox" id="menu_toggle">
+        <nav role="navigation">
+            <ul>
+                <label for="menu_toggle"><span></span><span></span></label>
+                <li><a href="index.html"><div><img src="../assets/img/home_icon.png" alt="Home">Home</div></a></li>
+                <li><a href="trajeto.html"><div><img src="../assets/img/loc_icon.png" alt="localizar">Trajeto</div></a></li>
+                <li class="small"><a href="perfil.html"><div><img src="../assets/img/perfil_icon.png" alt="perfil">Perfil</div></a></li>
+                <li><a href="#quemSomos"><div><img src="../assets/img/quemSomos_icon.png" alt="quem somos">Quem Somos</div></a></li>
+            </ul>
+        </nav>
+        <button onclick="validarUsuário()"><img src="../assets/img/usuario.png" alt="perfil" title="perfil"></button>
+        <label for="menu_toggle" class="menu_btn"><span></span></label>
+    </header>
+    
+    <!-- Conteúdo da página -->
+    <main>
+        <!-- direcionar até o conteúdo -->
+        <section class="wrapper">
+            <a name="quemSomos"></a>
+
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer role="contentinfo">
+            <div class="cols">
+            <!-- primeira coluna -->
+            <div class="footer_col1">
+                <a href="#home"><img src="../assets/img/logo_rodape.png" alt="logo" title="logo"></a>
+                <div class="social_medias">
+                    <a href="https://www.instagram.com/invites/contact/?igsh=i3925y7rnona&utm_content=w0soki" target="_blank" aria-label="Instagram TrenSpot">
+                        <img src="../assets/img/instagram_logo.png" alt="instagram" title="instagram">
+                    </a>
+                    <a href="mailto:trenspot3@gmail.com" target="_blank" aria-label="Email TrenSpot">
+                        <img src="../assets/img/email_logo.png" alt="email" title="email">
+                    </a>
+                    <a href="https://github.com/TrenSpot" target="_blank" aria-label="GitHub TrenSpot">
+                        <img src="../assets/img/github_logo.png" alt="GitHub" title="GitHub">
+                    </a>
+                </div>
+            </div>
+            <!-- segunda coluna -->
+            <div class="footer_col2">
+                <h6>Sobre</h6>
+                <p>TrenSpot é o site que visa contribuir com o conforto e segurança da sua viagem. Desenvolvido no projeto challenge da FIAP em 2024.</p>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="copy">
+            <p>© copyright 2024 TrenSpot - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="../assets/js/script.js"></script>
+
+    <!-- Script exclusivo da home page -->
+     <script>
+     </script>
+</body>
+</html>
