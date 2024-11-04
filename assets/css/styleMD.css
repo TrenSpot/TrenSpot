@@ -3,8 +3,42 @@ nav .small {
     display: none;
 }
 
+/* Header */
+header li div {
+    font-size: 23px;
+}
+
+/* Body */
+.main-logo {
+    width: 40%;
+}
+.wrapper {
+    background-size: 250px, 300px;
+}
+.wrapper button {
+    font-size: 23px;
+}
+.wrapper button img{
+    height: 22px;
+}
+
+/* Footer */
+.footer_col1 {
+    width: 200px;
+    margin: auto;
+}
+.footer_col1 img {
+    width: 200px;
+}
+.social_medias img {
+    width: 30px;
+}
+.footer_col2 {
+    width: 300px;
+}
+
 /* Corrigindo alinhamento do menu em largura específica */
-@media (max-width: 720px){
+@media (max-width: 800px){
     nav img {
         margin-right: 7px;
         transition: 0.3s;
@@ -14,17 +48,16 @@ nav .small {
         transition: 0.3s;
      }
 }
-@media (max-width: 635px){
+@media (max-width: 720px){
     nav img {
-        margin-right: 4px;
+        margin-right: 2px;
         transition: 0.3s;
      }
      nav li{
-        margin: 4px;
+        margin: 2px;
         transition: 0.3s;
      }
-}
-
-.main-logo {
-    width: 40%;
+     header li div{
+        font-size: 20px;
+    }
 }

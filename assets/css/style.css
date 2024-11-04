@@ -33,6 +33,7 @@ header {
     justify-content: space-between; 
     align-items: center; 
     padding: 20px 20px 10px; 
+    overflow: hidden;
 }
 .logo {
     width: 30vw;
@@ -61,6 +62,7 @@ nav li {
 nav img {
    margin-right: 10px;
    transition: 0.3s;
+   height: 25px;
 }
 nav div {
     color: var(--azul1);
@@ -83,8 +85,8 @@ header > input {
 body {
     background-color: var(--verde1);
 }
-main {
-    height: 100vh;
+.wrapper {
+    height: 110vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,12 +98,16 @@ main {
     position: relative;
     padding: auto;
 }
-main > img{
+.wrapper > img{
     margin-top: auto;
-    margin-bottom: 50px;
+    margin-bottom: 200px;
 }
-main > button {
+.wrapper > button {
     margin-bottom: auto;
+}
+.wrapper a {
+    font-size: 20px;
+    font-family: 'MuseoModerno';
 }
 .main-logo {
     width: 50%;
@@ -136,12 +142,28 @@ footer {
     padding: 0 20px;
     justify-content: space-between;
 }
-.footer_col1, .footer_col2 {
-    width: 40%;
+.footer_col1 {
+    width: 30%;
+    text-align: justify;
+    margin-left: 0;
+}
+.footer_col1 img {
+    display: flex;
+    width: 100%;
+}
+.social_medias {
+    display: flex;
+}
+.social_medias img {
+    width: 80%;
+}
+.footer_col2  {
+    width: 45%;
     text-align: justify;
 }
 .footer_col2 > h6 {
     text-align: center;
+    font-size: 17px;
 }
 .copy {
     background-color: #202020;

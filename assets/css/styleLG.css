@@ -2,11 +2,41 @@
 nav .small {
     display: none;
 }
- nav li{
+ nav li {
     margin: 25px;
     transition: 0.3s;
 }
 
+/* Header */
+header li div {
+    font-size: 23px;
+}
+
+/* Body */
 .main-logo {
     width: 30%;
+}
+.wrapper {
+    background-size: 350px, 400px;
+}
+.wrapper button {
+    font-size: 26px;
+}
+.wrapper button img{
+    height: 26px;
+}
+
+/* Footer */
+.footer_col1 {
+    width: 200px;
+    margin: auto;
+}
+.footer_col1 img {
+    width: 200px;
+}
+.social_medias img {
+    width: 30px;
+}
+.footer_col2 {
+    width: 300px;
 }
