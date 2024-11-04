@@ -82,10 +82,8 @@ header > input {
 }
 
 /* Corpo */
-body {
+.wrapper_home {
     background-color: var(--verde1);
-}
-.wrapper {
     height: 110vh;
     display: flex;
     flex-direction: column;
@@ -98,14 +96,14 @@ body {
     position: relative;
     padding: auto;
 }
-.wrapper > img{
+.wrapper_home > img{
     margin-top: auto;
     margin-bottom: 200px;
 }
-.wrapper > button {
+.wrapper_home > button {
     margin-bottom: auto;
 }
-.wrapper a {
+.wrapper_home a {
     font-size: 20px;
     font-family: 'MuseoModerno';
 }

@@ -16,13 +16,13 @@ header li div {
 .main-logo {
     width: 30%;
 }
-.wrapper {
+.wrapper_home {
     background-size: 350px, 400px;
 }
-.wrapper button {
+.wrapper_home button {
     font-size: 26px;
 }
-.wrapper button img{
+.wrapper_home button img{
     height: 26px;
 }
 
