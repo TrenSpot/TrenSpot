@@ -15,28 +15,32 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: 'MuseoModerno';
 }
-p {
-    font-family: 'Roboto';
+:root {
+    --verde1: #19908D;
+    --verde2: #126C6A;
+    --verde3: #0C4847;
+    --amarelo1: #ECC94B;
+    --amarelo2: #FFB347;
+    --azul1: #B9F2FF;
+    --azul2: #A1D9E8;
 }
-
-/* se repete em todas as telas */
 
 /* Cabeçalho */
 header {
     height: 55px;
-    background-color: #126C6A;
+    background-color: var(--verde2);
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
     padding: 20px 20px 10px; 
 }
 .logo {
-    width: 33vw;
+    width: 30vw;
     height: 100%;
     cursor: pointer;
     overflow-x: visible;
 }
-.logo > img{
+.logo > img {
     height: 100%;
 }
 nav {
@@ -45,13 +49,24 @@ nav {
 nav ul {
     display: flex; 
     justify-content: center; 
-    padding: 0; 
+}
+nav label {
+    display: none;
 }
 nav li {
     margin: 0 15px; 
+    white-space: nowrap;
+    transition: 0.3s;
 }
-header > a:last-child {
-    margin-left: auto; 
+nav img {
+   margin-right: 10px;
+   transition: 0.3s;
+}
+nav div {
+    color: var(--azul1);
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'MuseoModerno';
 }
 header > button {
     background: none;
@@ -61,12 +76,12 @@ header > button > img {
     width: 40px;
 }
 header > input {
-    opacity: 0;
+    display: none;
 }
 
 /* Corpo */
 body {
-    background-color: #19908D;
+    background-color: var(--verde1);
 }
 main {
     height: 100vh;
@@ -89,10 +104,10 @@ main > button {
     margin-bottom: auto;
 }
 .main-logo {
-    width: 45%;
+    width: 50%;
 }
 .locate-button {
-    background-color: #B9F2FF;  
+    background-color: var(--azul1);  
     border: none;
     border-radius: 20px; 
     padding: 10px 20px; 
@@ -102,16 +117,16 @@ main > button {
     transition: background-color 0.3s;
 }
 .locate-button > a {
-    color: #FFB347; 
+    color: var(--amarelo2); 
 }
 .locate-button:hover {
-    background-color: #A1D9E8; 
+    background-color: var(--azul2); 
 }
 
 /* Rodapé */
 footer {
     background-color: #303030;
-    color: #B9F2FF;
+    color: var(--azul1);
     width: 100%;
     bottom: 0;
 }

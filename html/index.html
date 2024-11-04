@@ -21,29 +21,19 @@
     <!-- Cabeçalho -->
     <header role="banner">  
         <a href="#home" class="logo"><img src="../assets/img/logo_header.png" alt="logo" title="logo"></a>
+        <span></span>
+        <input type="checkbox" id="menu_toggle">
         <nav role="navigation">
             <ul>
-                <div>
-                    <li><a href="#home">Home</a></li>
-                </div>
-                <div>
-                    <li><a href="trajeto.html">Trajeto</a></li>
-                </div>
-                <div>
-                    <li><a href="perfil.html">Perfil</a></li>
-                </div>
-                <div>
-                    <li><a href="quem_somos.html">Quem Somos</a></li>
-                </div>
+                <label for="menu_toggle"><span></span><span></span></label>
+                <li><a href="#home"><div><img src="../assets/img/home_icon.png" alt="Home">Home</div></a></li>
+                <li><a href="trajeto.html"><div><img src="../assets/img/loc_icon.png" alt="localizar">Trajeto</div></a></li>
+                <li class="small"><a href="perfil.html"><div><img src="../assets/img/perfil_icon.png" alt="perfil">Perfil</div></a></li>
+                <li><a href="quem_somos.html"><div><img src="../assets/img/quemSomos_icon.png" alt="quem somos">Quem Somos</div></a></li>
             </ul>
         </nav>
         <button onclick="validarUsuário()"><img src="../assets/img/usuario.png" alt="perfil" title="perfil"></button>
-        <input type="checkbox" id="menu_toggle">
-        <label for="menu_toggle" class="menu_btn">
-            <span></span>
-            <!-- <span></span>
-            <span></span> -->
-        </label>
+        <label for="menu_toggle" class="menu_btn"><span></span></label>
     </header>
     
     <!-- Conteúdo da página -->

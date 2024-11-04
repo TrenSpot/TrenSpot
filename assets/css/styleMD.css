@@ -1,0 +1,30 @@
+/* Removendo item específico do small device */
+nav .small {
+    display: none;
+}
+
+/* Corrigindo alinhamento do menu em largura específica */
+@media (max-width: 720px){
+    nav img {
+        margin-right: 7px;
+        transition: 0.3s;
+     }
+     nav li{
+        margin: 7px;
+        transition: 0.3s;
+     }
+}
+@media (max-width: 635px){
+    nav img {
+        margin-right: 4px;
+        transition: 0.3s;
+     }
+     nav li{
+        margin: 4px;
+        transition: 0.3s;
+     }
+}
+
+.main-logo {
+    width: 40%;
+}

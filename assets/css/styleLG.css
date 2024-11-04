@@ -1,0 +1,12 @@
+/* Removendo item específico do small device */
+nav .small {
+    display: none;
+}
+ nav li{
+    margin: 25px;
+    transition: 0.3s;
+}
+
+.main-logo {
+    width: 30%;
+}

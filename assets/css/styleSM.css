@@ -1,12 +1,52 @@
+/* Estilizando o menu para small devices */
+nav ul {
+    background-color: var(--verde1);
+    padding: 50px;
+    border-radius: 20px;
+    border: 5px solid var(--verde3);
+    display: block;
+    position: relative;
+}
+nav label{
+    display: block;
+}
+nav span {
+    position: absolute;
+    top: 20px; 
+    right: 10px;
+    width: 30px;
+    height: 6px; 
+    background-color: var(--verde3);
+    transform: rotate(45deg);
+}
+nav span:last-child { 
+    transform: rotate(-45deg);
+}
+header nav ul li {
+    margin: 5px;
+}
+nav li div{
+    background-color: var(--azul1);
+    padding: 5px;
+    border-radius: 10px;
+    width: 200px;
+    color: #0C4847;
+    font-weight: 600;
+}
 
 /* Ocultando o nav */
-nav > ul {
-    flex-direction: column;
+nav{
+    display: none;
 }
-nav {
-    visibility: hidden; 
-    height: 0;
-    overflow: hidden;
+
+/* Redimensionando cabeçalho */
+header > span {
+    width: 200px;
+}
+@media (max-width: 480px){
+    header > span {
+        width: 100px;
+    }
 }
 
 /* Criando o menu Hambuguer */
@@ -25,8 +65,7 @@ nav {
     display: block;
     width: 100%;
     height: 6px; 
-    width: 100%;
-    background-color: #ECC94B;
+    background-color: var(--amarelo1);
     border-radius: 10px;
 }
 .menu_btn > span::before {
@@ -38,4 +77,21 @@ nav {
     position: absolute; 
     content: '';
     bottom: 7px; 
+}
+header button {
+    margin-right: 20px;
+}
+
+/* Apresentando o menu */
+#menu_toggle:checked ~ nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .3);
+    justify-content: center;
+    align-items: center;
 }
