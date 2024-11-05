@@ -9,9 +9,52 @@
     <title>TrenSpot</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <!-- Estilo exclusivo da home page (para não carregar em todas as páginas) -->
+    <style>
+        /* Corpo */
+        .wrapper_home {
+            background-color: var(--verde1);
+            height: 110vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: 
+                url(../assets/img/trilhos_bg1.png), 
+                url(../assets/img/trilhos_bg2.png); 
+            background-repeat: no-repeat, no-repeat; 
+            background-position: top left, bottom right;
+            padding: auto;
+        }
+        .wrapper_home a {
+            font-size: 20px;
+            font-family: 'MuseoModerno';
+        }
+        .wrapper_home .main-logo {
+            margin-top: auto;
+            margin-bottom: 200px;
+            width: 50%;
+        }
+        .locate-button {
+            background-color: var(--azul1);  
+            border: none;
+            border-radius: 20px; 
+            padding: 10px 40px; 
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin-bottom: auto;
+        }
+        .locate-button > a {
+            color: var(--amarelo2); 
+        }
+        .locate-button:hover {
+            background-color: var(--azul2); 
+        }
+    </style>
     <!-- Passando o tamanho das telas diretamente no link do CSS -->
     <link rel="stylesheet" href="../assets/css/styleSM.css" media="(max-width: 600px)">
-    <link rel="stylesheet" href="../assets/css/styleMD.css" media="(min-width: 601px) and (max-width: 1024px)">
+    <link rel="stylesheet" href="../assets/css/styleMD.css" media="(min-width: 601px)">
     <link rel="stylesheet" href="../assets/css/styleLG.css" media="(min-width: 1025px)">    
     <link rel="shortcut icon" href="../assets/img/logo.png" type="image/x-icon">
 </head>

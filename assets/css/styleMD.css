@@ -8,8 +8,9 @@ header li div {
     font-size: 23px;
 }
 
+/* ========= HOME ========= */
 /* Body */
-.main-logo {
+.wrapper_home .main-logo {
     width: 40%;
 }
 .wrapper_home {
@@ -35,6 +36,26 @@ header li div {
 }
 .footer_col2 {
     width: 300px;
+}
+/* ========= LOGIN ========= */
+.wrapper_login .logo-box {
+    width: 40%;
+}
+.wrapper_login h1{
+    font-size: 28px
+}
+.wrapper_login p {
+    font-size: 20px;
+}
+.wrapper_login input, .wrapper_login .manterLogado {
+    width: 450px;
+    padding: 10px 10px;
+}
+.wrapper_login input::placeholder {
+    font-size: 16px;
+}
+.wrapper_login button {
+    font-size: 25px;
 }
 
 /* Corrigindo alinhamento do menu em largura específica */

@@ -81,58 +81,13 @@ header > input {
     display: none;
 }
 
-/* Corpo */
-.wrapper_home {
-    background-color: var(--verde1);
-    height: 110vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: 
-        url(../img/trilhos_bg1.png), 
-        url(../img/trilhos_bg2.png); 
-    background-repeat: no-repeat, no-repeat; 
-    background-position: top left, bottom right;
-    position: relative;
-    padding: auto;
-}
-.wrapper_home > img{
-    margin-top: auto;
-    margin-bottom: 200px;
-}
-.wrapper_home > button {
-    margin-bottom: auto;
-}
-.wrapper_home a {
-    font-size: 20px;
-    font-family: 'MuseoModerno';
-}
-.main-logo {
-    width: 50%;
-}
-.locate-button {
-    background-color: var(--azul1);  
-    border: none;
-    border-radius: 20px; 
-    padding: 10px 20px; 
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-.locate-button > a {
-    color: var(--amarelo2); 
-}
-.locate-button:hover {
-    background-color: var(--azul2); 
-}
-
 /* Rodapé */
 footer {
     background-color: #303030;
     color: var(--azul1);
     width: 100%;
     bottom: 0;
+    padding-top: 20px;
 }
 .cols {
     width: 100%;
@@ -169,4 +124,5 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }

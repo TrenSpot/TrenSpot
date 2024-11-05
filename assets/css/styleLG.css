@@ -13,17 +13,57 @@ header li div {
 }
 
 /* Body */
-.main-logo {
+/* ========= HOME ========= */
+.wrapper_home .main-logo {
     width: 30%;
 }
 .wrapper_home {
     background-size: 350px, 400px;
 }
-.wrapper_home button {
+.wrapper_home .locate-button a {
     font-size: 26px;
 }
 .wrapper_home button img{
     height: 26px;
+}
+/* ========= LOGIN ========= */
+.main_login{
+    display: flex;
+    margin: 100px 0;
+}
+.wrapper_login {
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    height: 600px;
+}
+.wrapper_login .logo-box {
+    height: 100%;
+    width: 500px;
+    background-color: var(--verde1);
+    display: flex;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    align-items: center;
+}
+.wrapper_login .logo-box img {
+    width: 400px;
+    height: 220px;
+}
+.wrapper_login form {
+    width: 400px;
+    height: 100%;
+    margin: 0;
+    padding: 0 50px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.wrapper_login form h1 {
+    margin-top: 20px;
+}
+.wrapper_login input, .wrapper_login .manterLogado {
+    width: 380px;
 }
 
 /* Footer */
