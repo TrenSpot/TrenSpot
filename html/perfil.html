@@ -152,11 +152,17 @@
 
 <!-- Corpo do Site -->
 <body>
-
-     <!-- Script especial para perfil page (verificar usuário antes de carregar a página) -->
-     <script>
+     <!-- Script de validação de usuário (antes de carregar a página) -->
+    <script>
+        if (localStorage.getItem('logado') != 'true' && sessionStorage.getItem('logado') != 'true') {
+            window.location.href = 'login.html';
+            sessionStorage.setItem('msgErro', '1');
+        }
+        else {
+            sessionStorage.setItem('msgErro', '0');
             
-     </script>
+        }
+    </script>
 
     <!-- Cabeçalho -->
     <header role="banner">  
@@ -183,7 +189,7 @@
             <div class="info_side">
                 <div class="banner"><img src="../assets/img/lapisAzul1_icon.png" alt="editar banner"></div>
                 <img src="../assets/img/bigUsuario.png" alt="foto do usuário">
-                <h2 id="nomeUsuario">Nome do Usuário</h2>
+                <h2 id="nomeUsuario"></h2>
             </div>
             <div class="options_side">
                 <div class="btns">
@@ -201,12 +207,12 @@
                                 <p>Alterar nome:</p>
                                 <input type="text" id="alterarNome" name="alterarNome" placeholder="Altere seu nome...">
                             </label>
-                            <button><h3>Confirmar</h3></button><br>
+                            <button onclick="alterarNome()"><h3>Confirmar</h3></button><br>
                             <label for="editar">Cancelar</label>
                         </div>
                     </label>
                 </div>
-                <button>Sair da conta</button>
+                <button onclick="sairConta()">Sair da conta</button>
             </div>
         </section>
     </main>
@@ -246,6 +252,26 @@
 
     <!-- Script exclusivo da perfil page -->
      <script>
+        var nomeUsuario = document.getElementById('nomeUsuario');
+        nomeUsuario.innerText = localStorage.getItem('nome') || 'Nome do Usuário';
+
+        function alterarNome() {
+            var alterarNome = document.getElementById('alterarNome');
+            var fechar = document.getElementById('editar');
+
+            editar.checked = false;
+            localStorage.setItem('nome', alterarNome.value);
+            nomeUsuario.innerText = localStorage.getItem('nome');
+        }
+
+        function sairConta() {
+            localStorage.removeItem('nome');
+            localStorage.removeItem('email');
+            localStorage.removeItem('senha');
+            localStorage.removeItem('logado');
+            sessionStorage.removeItem('logado');
+            window.location.href = 'login.html';
+        }
      </script>
 </body>
 </html>

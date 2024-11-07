@@ -121,6 +121,7 @@
 
 <!-- Corpo do Site -->
 <body>
+
     <!-- Cabeçalho -->
     <header role="banner">  
         <a href="index.html" class="logo"><img src="../assets/img/logo_header.png" alt="logo" title="logo"></a>
@@ -236,14 +237,24 @@
 
     <!-- Script exclusivo da login page -->
      <script>
+        var erro = document.getElementById('erro');
+        if (sessionStorage.getItem('msgErro') == '1') {
+            erro.innerText = 'Realize o login para acessar o perfil';
+        }
+        else {
+            erro.innerText = '';
+        }
+
         function validarLogin(){
             var email = document.getElementById('txtEmail_login');
             var senha = document.getElementById('txtSenha_login');
             var manterLogado = document.getElementById('chkManterLogado_login');
             var erroEmail = document.getElementById('erroEmail_login');
             var erroSenha = document.getElementById('erroSenha_login');
-            var erro = document.getElementById('erro');
-        
+
+            sessionStorage.setItem('msgErro','0');
+            erro.innerText = '';
+
             if (email.value == ''){
                 erro.innerText = '';
                 erroEmail.innerText = 'Campo "e-mail" obrigatório';
@@ -264,7 +275,6 @@
                         else{
                             sessionStorage.setItem('logado','true');
                         }
-                        localStorage.setItem('msgErro','0');
                         window.location.href = 'trajeto.html';
                     }
                     else{
@@ -274,6 +284,7 @@
                 }
             }
         }
+
         function validarCadastro(){
             var nome = document.getElementById('txtNome');
             var email = document.getElementById('txtEmail_cadastro');
@@ -284,6 +295,9 @@
             var erroEmail = document.getElementById('erroEmail_cadastro');
             var erroSenha = document.getElementById('erroSenha_cadastro');
             var erroConfirmarSenha = document.getElementById('erroConfirmarSenha');
+            
+            sessionStorage.setItem('msgErro','0');
+            erro.innerText = '';
             
             if (nome.value == ''){
                 erro.innerText = '';
@@ -325,7 +339,6 @@
                                 localStorage.setItem('nome', nome.value);
                                 localStorage.setItem('email', email.value);
                                 localStorage.setItem('senha', senha.value);
-                                localStorage.setItem('msgErro','0');
                                 window.location.href = 'trajeto.html';
                             }
                             
