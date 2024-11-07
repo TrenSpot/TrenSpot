@@ -12,6 +12,23 @@
     <!-- Estilo exclusivo da login page (para não carregar em todas as páginas) -->
     <style>
         /* Corpo */
+
+        /* Selecinar login ou cadastro */
+        .form_login {
+            display: block;
+        }
+        .form_cadastro, #trocar {
+            display: none;
+        }
+        #trocar:checked  ~ .form_cadastro {
+            display: block;
+        }  
+        #trocar:checked  ~ .form_login {
+            display: none;
+        }    
+
+
+        /* Estilização */
         .wrapper_login {
             background-color: var(--verde1);
             display: flex;
@@ -32,6 +49,9 @@
             padding: 20px;
             border-radius: 10px;
         }
+        .form_login label input {
+            margin-bottom: 20px;
+        }
         .wrapper_login h1, .wrapper_login p{
             color: white;
         }
@@ -51,7 +71,7 @@
             width: 300px;
             margin-bottom: 10px;
         }
-        .wrapper_login #chkManterLogado {
+        .wrapper_login #chkManterLogado_login, .wrapper_login #chkManterLogado_cadastro {
             display: none;
         }
         .wrapper_login .manterLogado {
@@ -64,7 +84,7 @@
             font-weight: 500;
             border: 5px solid var(--verde2);
         }
-        #chkManterLogado:checked ~ .manterLogado {
+        #chkManterLogado_login:checked ~ .manterLogado, #chkManterLogado_cadastro:checked ~ .manterLogado {
             background-color: var(--verde1);
         }
         .wrapper_login form > div {
@@ -124,26 +144,58 @@
         <!-- direcionar até o conteúdo -->
         <section class="wrapper_login">
             <div class="logo-box"><img src="../assets/img/title_main.png" class="main-logo" alt="logo" title="logo"></div>
-            <form>
+            <input type="checkbox" id="trocar" name="trocar">
+            <form class="form_login">
                 <h1>Logar na conta</h1>
-                <label for="txtEmail">
+                <label for="txtEmail_login">
                     <p>E-mail</p>
-                    <input type="email" id="txtEmail" name="txtEmail" placeholder="Insira seu e-mail...">
+                    <input type="email" id="txtEmail_login" name="txtEmail_login" placeholder="Insira seu e-mail...">
                 </label>
-                <div id="erroEmail"></div>
-                <label for="txtSenha">
+                <div id="erroEmail_login"></div>
+                <label for="txtSenha_login">
                     <p>Senha</p>
-                    <input type="password" id="txtSenha" name="txtSenha" placeholder="Insira sua senha...">
+                    <input type="password" id="txtSenha_login" name="txtSenha_login" placeholder="Insira sua senha...">
                 </label>
-                <div id="erroSenha"></div>
-                <label for="chkManterLogado">
-                    <input type="checkbox" id="chkManterLogado" name="chkManterLogado"><div class="manterLogado"><p>Manter logado?</p></div>
+                <div id="erroSenha_login"></div>
+                <label for="chkManterLogado_login">
+                    <input type="checkbox" id="chkManterLogado_login" name="chkManterLogado_login"><div class="manterLogado"><p>Manter logado?</p></div>
                 </label>
                 <div id="erro"></div>
                 <button type="button" onclick="validarLogin()">CONFIRMAR</button>
                 <div class="alternativas">
                     <a href="trajeto.html"><p>Continuar sem se logar</p></a>
-                    <a href="cadastro.html"><p>Não tenho uma conta</p></a>
+                    <label for="trocar"><a><p>Não tenho uma conta</p></a></label>
+                </div>
+            </form>
+            <form class="form_cadastro">
+                <h1>Cadastre-se</h1>
+                <label for="txtNome">
+                    <p>Nome</p>
+                    <input type="text" id="txtNome" name="txtNome" placeholder="Insira seu nome...">
+                </label>
+                <div id="erroNome"></div>
+                <label for="txtEmail_cadastro">
+                    <p>E-mail</p>
+                    <input type="email" id="txtEmail_cadastro" name="txtEmail_cadastro" placeholder="Insira seu e-mail...">
+                </label>
+                <div id="erroEmail_cadastro"></div>
+                <label for="txtSenha_cadastro">
+                    <p>Senha</p>
+                    <input type="password" id="txtSenha_cadastro" name="txtSenha_cadastro" placeholder="Insira sua senha...">
+                </label>
+                <div id="erroSenha_cadastro"></div>
+                <label for="txtConfirmarSenha">
+                    <p>Confirmar senha</p>
+                    <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Confirme sua senha...">
+                </label>
+                <div id="erroConfirmarSenha"></div>
+                <label for="chkManterLogado_cadastro">
+                    <input type="checkbox" id="chkManterLogado_cadastro" name="chkManterLogado_cadastro"><div class="manterLogado"><p>Manter logado?</p></div>
+                </label>
+                <button type="button" onclick="validarCadastro()">CADASTRAR</button>
+                <div class="alternativas">
+                    <a href="trajeto.html"><p>Continuar sem se logar</p></a>
+                    <label for="trocar"><a><p>Voltar</p></a></label>
                 </div>
             </form>
         </section>
@@ -185,11 +237,11 @@
     <!-- Script exclusivo da login page -->
      <script>
         function validarLogin(){
-            var email = document.getElementById('txtEmail');
-            var senha = document.getElementById('txtSenha');
-            var manterLogado = document.getElementById('chkManterLogado');
-            var erroEmail = document.getElementById('erroEmail');
-            var erroSenha = document.getElementById('erroSenha');
+            var email = document.getElementById('txtEmail_login');
+            var senha = document.getElementById('txtSenha_login');
+            var manterLogado = document.getElementById('chkManterLogado_login');
+            var erroEmail = document.getElementById('erroEmail_login');
+            var erroSenha = document.getElementById('erroSenha_login');
             var erro = document.getElementById('erro');
         
             if (email.value == ''){
@@ -220,6 +272,67 @@
                     }
                 }
             }
+        }
+        function validarCadastro(){
+            var nome = document.getElementById('txtNome');
+            var email = document.getElementById('txtEmail_cadastro');
+            var senha = document.getElementById('txtSenha_cadastro');
+            var confirmarSenha = document.getElementById('txtConfirmarSenha');
+            var manterLogado = document.getElementById('chkManterLogado_cadastro');
+            var erroNome = document.getElementById('erroNome');
+            var erroEmail = document.getElementById('erroEmail_cadastro');
+            var erroSenha = document.getElementById('erroSenha_cadastro');
+            var erroConfirmarSenha = document.getElementById('erroConfirmarSenha');
+            
+            if (nome.value == ''){
+                erroNome.innerText = 'Campo "nome" obrigatório';
+                nome.focus();
+            }
+            else{
+                erroNome.innerText = '';
+                if (email.value == ''){
+                    erroEmail.innerText = 'Campo "e-mail" obrigatório';
+                    email.focus();
+                }
+                else{
+                    erroEmail.innerText = "";
+                    if(senha.value == ''){
+                        erroSenha.innerText = 'Campo "Senha" obrigatório';
+                        senha.focus();
+                    }
+                    else{
+                        erroSenha.innerText = "";
+                        if(confirmarSenha.value == ''){
+                            erroConfirmarSenha.innerText = 'Confirme sua senha ';
+                            confirmarSenha.focus();
+                        }
+                        else{
+                            erroConfirmarSenha.innerText = "";
+                            if (senha.value != confirmarSenha.value){
+                                erroConfirmarSenha.innerText = 'Senhas não conferem';
+                                confirmarSenha.focus();
+                            }
+                            else{
+                                erroConfirmarSenha.innerText = '';
+                                if(manterLogado.checked){
+                                    localStorage.setItem('logado','true');
+                                }
+                                else{
+                                    sessionStorage.setItem('logado','true');
+                                }
+                                localStorage.setItem('nome', nome.value);
+                                localStorage.setItem('email', email.value);
+                                localStorage.setItem('senha', senha.value);
+                                localStorage.setItem('msgErro','0');
+                                window.location.href = 'trajeto.html';
+                            }
+                            
+                        }
+                    }
+                   
+                }
+            }
+            
         }
      </script>
 </body>

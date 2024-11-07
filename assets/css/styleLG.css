@@ -35,7 +35,7 @@ header li div {
     display: flex;
     background-color: white;
     flex-direction: row;
-    height: 600px;
+    height: 700px;
 }
 .wrapper_login .logo-box {
     height: 100%;
@@ -59,13 +59,17 @@ header li div {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+.wrapper_login .form_login h1 {
+    margin-top: 100px;
+}
 .wrapper_login form h1 {
     margin-top: 20px;
 }
 .wrapper_login input, .wrapper_login .manterLogado {
     width: 380px;
 }
-/* ========= CADASTRO ========= */
+
+/* ========= PERFIL ========= */
 .main_cadastro{
     display: flex;
     margin: 100px 0;

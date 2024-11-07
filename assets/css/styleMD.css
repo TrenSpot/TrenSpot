@@ -57,7 +57,11 @@ header li div {
 .wrapper_login button {
     font-size: 25px;
 }
-/* ========= CADASTRO ========= */
+
+.wrapper_cadastro button {
+    font-size: 25px;
+}
+/* ========= PERFIL ========= */
 .wrapper_cadastro .logo-box {
     width: 40%;
 }

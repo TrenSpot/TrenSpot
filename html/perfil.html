@@ -37,11 +37,32 @@
     </header>
     
     <!-- Conteúdo da página -->
-    <main>
+    <main class="main_perfil">
         <!-- direcionar até o conteúdo -->
-        <section class="wrapper">
-            <a name="perfil"></a>
-
+        <section class="wrapper_perfil">
+            <div class="logo-box"><img src="../assets/img/title_main.png" class="main-logo" alt="logo" title="logo"></div>
+            <form>
+                <h1>Logar na conta</h1>
+                <label for="txtEmail">
+                    <p>E-mail</p>
+                    <input type="email" id="txtEmail" name="txtEmail" placeholder="Insira seu e-mail...">
+                </label>
+                <div id="erroEmail"></div>
+                <label for="txtSenha">
+                    <p>Senha</p>
+                    <input type="password" id="txtSenha" name="txtSenha" placeholder="Insira sua senha...">
+                </label>
+                <div id="erroSenha"></div>
+                <label for="chkManterLogado">
+                    <input type="checkbox" id="chkManterLogado" name="chkManterLogado"><div class="manterLogado"><p>Manter logado?</p></div>
+                </label>
+                <div id="erro"></div>
+                <button type="button" onclick="validarLogin()">CONFIRMAR</button>
+                <div class="alternativas">
+                    <a href="trajeto.html"><p>Continuar sem se logar</p></a>
+                    <a href="cadastro.html"><p>Não tenho uma conta</p></a>
+                </div>
+            </form>
         </section>
     </main>
 
