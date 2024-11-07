@@ -59,7 +59,21 @@ header li div {
 }
 
 /* ========= PERFIL ========= */
-
+.wrapper_perfil .info_side > img {
+    width: 300px;
+    top: 105px;
+}
+.wrapper_perfil h2 {
+    margin-top: 155px;
+    font-size: 30px;
+}
+.wrapper_perfil .btn {
+    font-size: 18px;
+    width: 250px;
+}
+.wrapper_perfil .options_side > button {
+    font-size: 20px;
+}
 
 /* Corrigindo alinhamento do menu em largura específica */
 @media (max-width: 800px){

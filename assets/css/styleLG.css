@@ -83,20 +83,33 @@ header li div {
 .wrapper_perfil .info_side {
     height: 100%;
     width: 500px;
-    background-color: var(--verde1);
+    background-color: var(--azul1);
     display: flex;
+    flex-direction: column;
     margin: 0;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     align-items: center;
 }
-.wrapper_login .options_side {
-    width: 400px;
+.wrapper_perfil .options_side {
+    width: 480px;
     height: 100%;
-    margin: 0;
-    padding: 0 50px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    background-color: var(--verde1);
+    align-items: center;
+    padding: 0 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.wrapper_perfil .info_side h2 {
+    font-size: 30px;
+}
+.wrapper_perfil .info_side > img {
+    top: 250px;
+    transform: translateX(-150%);
+}
+.wrapper_perfil .btns {
+    flex-direction: column;
+    margin: 150px 0;
 }
 
 /* Footer */
