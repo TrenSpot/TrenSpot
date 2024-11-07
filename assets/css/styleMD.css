@@ -58,29 +58,8 @@ header li div {
     font-size: 25px;
 }
 
-.wrapper_cadastro button {
-    font-size: 25px;
-}
 /* ========= PERFIL ========= */
-.wrapper_cadastro .logo-box {
-    width: 40%;
-}
-.wrapper_cadastro h1{
-    font-size: 28px
-}
-.wrapper_cadastro p {
-    font-size: 20px;
-}
-.wrapper_cadastro input, .wrapper_cadastro .manterLogado {
-    width: 450px;
-    padding: 10px 10px;
-}
-.wrapper_cadastro input::placeholder {
-    font-size: 16px;
-}
-.wrapper_cadastro button {
-    font-size: 25px;
-}
+
 
 /* Corrigindo alinhamento do menu em largura específica */
 @media (max-width: 800px){

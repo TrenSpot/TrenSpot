@@ -70,17 +70,17 @@ header li div {
 }
 
 /* ========= PERFIL ========= */
-.main_cadastro{
+.main_perfil{
     display: flex;
     margin: 100px 0;
 }
-.wrapper_cadastro {
+.wrapper_perfil {
     display: flex;
     background-color: white;
     flex-direction: row;
     height: 600px;
 }
-.wrapper_cadastro .logo-box {
+.wrapper_perfil .info_side {
     height: 100%;
     width: 500px;
     background-color: var(--verde1);
@@ -90,23 +90,13 @@ header li div {
     border-bottom-left-radius: 10px;
     align-items: center;
 }
-.wrapper_cadastro .logo-box img {
-    width: 400px;
-    height: 220px;
-}
-.wrapper_cadastro form {
+.wrapper_login .options_side {
     width: 400px;
     height: 100%;
     margin: 0;
     padding: 0 50px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-}
-.wrapper_cadastro form h1 {
-    margin-top: 20px;
-}
-.wrapper_cadastro input, .wrapper_cadastro .manterLogado {
-    width: 380px;
 }
 
 /* Footer */

@@ -148,12 +148,12 @@
             <form class="form_login">
                 <h1>Logar na conta</h1>
                 <label for="txtEmail_login">
-                    <p>E-mail</p>
+                    <p>E-mail:</p>
                     <input type="email" id="txtEmail_login" name="txtEmail_login" placeholder="Insira seu e-mail...">
                 </label>
                 <div id="erroEmail_login"></div>
                 <label for="txtSenha_login">
-                    <p>Senha</p>
+                    <p>Senha:</p>
                     <input type="password" id="txtSenha_login" name="txtSenha_login" placeholder="Insira sua senha...">
                 </label>
                 <div id="erroSenha_login"></div>
@@ -170,22 +170,22 @@
             <form class="form_cadastro">
                 <h1>Cadastre-se</h1>
                 <label for="txtNome">
-                    <p>Nome</p>
+                    <p>Nome:</p>
                     <input type="text" id="txtNome" name="txtNome" placeholder="Insira seu nome...">
                 </label>
                 <div id="erroNome"></div>
                 <label for="txtEmail_cadastro">
-                    <p>E-mail</p>
+                    <p>E-mail:</p>
                     <input type="email" id="txtEmail_cadastro" name="txtEmail_cadastro" placeholder="Insira seu e-mail...">
                 </label>
                 <div id="erroEmail_cadastro"></div>
                 <label for="txtSenha_cadastro">
-                    <p>Senha</p>
+                    <p>Senha:</p>
                     <input type="password" id="txtSenha_cadastro" name="txtSenha_cadastro" placeholder="Insira sua senha...">
                 </label>
                 <div id="erroSenha_cadastro"></div>
                 <label for="txtConfirmarSenha">
-                    <p>Confirmar senha</p>
+                    <p>Confirmar senha:</p>
                     <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Confirme sua senha...">
                 </label>
                 <div id="erroConfirmarSenha"></div>
@@ -245,6 +245,7 @@
             var erro = document.getElementById('erro');
         
             if (email.value == ''){
+                erro.innerText = '';
                 erroEmail.innerText = 'Campo "e-mail" obrigatório';
                 email.focus();
             }
@@ -285,6 +286,7 @@
             var erroConfirmarSenha = document.getElementById('erroConfirmarSenha');
             
             if (nome.value == ''){
+                erro.innerText = '';
                 erroNome.innerText = 'Campo "nome" obrigatório';
                 nome.focus();
             }

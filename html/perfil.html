@@ -9,6 +9,139 @@
     <title>TrenSpot</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <!-- Estilo exclusivo da perfil page (para não carregar em todas as páginas) -->
+    <style>
+        /* Corpo */ 
+        .wrapper_perfil {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 200px;
+        }
+        .info_side {
+            width: 100%;
+            margin-bottom: 70px;
+        }
+        .banner {
+            background-color: var(--verde3);
+            width: 100%;
+            height: 200px;
+        }
+        .banner img {
+            position: absolute;
+            width: 40px;
+            right: 10px;
+            display: none;
+        }
+        .info_side > img {
+            width: 200px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 155px;
+        }
+        .info_side h2 {
+            text-align: center;
+            margin-top: 90px;
+            font-family: 'Roboto';
+            color: var(--verde3);
+        }
+        .options_side {
+            display: flex;
+            flex-direction: column;
+        }
+        .btns {
+            display: flex;
+            margin-bottom: 200px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            width: 170px;
+            border: 4px solid var(--azul2);
+            border-radius: 10px;
+            background-color: var(--azul2);
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 10px;
+            color: var(--verde3);
+            margin: 10px;
+        }
+        #localizacao:checked + label {
+            background-color: var(--azul1);
+            color: var(--verde1);
+        }
+        .btn img {
+            width: 25px;
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+        .options_side > button {
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: underline;
+            color: var(--verde3);
+        }
+        .editarPerfil {
+            display: none;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--verde1);
+            color: white;
+            padding: 50px 20px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        .editarPerfil span {
+            position: absolute;
+            top: 20px; 
+            right: 10px;
+            width: 30px;
+            height: 6px; 
+            background-color: var(--verde3);
+            transform: rotate(45deg);
+        }
+        .editarPerfil span:last-child { 
+            transform: rotate(-45deg);
+        }
+        .editarPerfil label:last-child {
+            text-decoration: underline;
+            color: var(--amarelo1);
+            margin-top: 20px
+        }
+        .editarPerfil input[type="text"] {
+            width: 250px;
+            background-color: var(--azul1);
+            border: none;
+            border-radius: 10px;
+            padding: 7px;
+            margin: 20px;
+        }
+        .editarPerfil input[type="text"]::placeholder{
+            font-size: 16px;
+            color: var(--verde3);
+            opacity: .5;
+        }
+        .editarPerfil button {
+            border: none;
+            border-radius: 10px;
+            padding: 10px 30px;
+            background-color: var(--amarelo1);
+            color: var(--verde3);
+            font-size: 18px;
+            margin: 50px 0 20px 0;
+        }
+        #editar:checked ~ .editarPerfil {
+            display: block;
+        }
+    </style>
+
     <!-- Passando o tamanho das telas diretamente no link do CSS -->
     <link rel="stylesheet" href="../assets/css/styleSM.css" media="(max-width: 600px)">
     <link rel="stylesheet" href="../assets/css/styleMD.css" media="(min-width: 601px) and (max-width: 1024px)">
@@ -18,6 +151,12 @@
 
 <!-- Corpo do Site -->
 <body>
+
+     <!-- Script especial para perfil page (verificar usuário antes de carregar a página) -->
+     <script>
+            
+     </script>
+
     <!-- Cabeçalho -->
     <header role="banner">  
         <a href="index.html" class="logo"><img src="../assets/img/logo_header.png" alt="logo" title="logo"></a>
@@ -40,29 +179,34 @@
     <main class="main_perfil">
         <!-- direcionar até o conteúdo -->
         <section class="wrapper_perfil">
-            <div class="logo-box"><img src="../assets/img/title_main.png" class="main-logo" alt="logo" title="logo"></div>
-            <form>
-                <h1>Logar na conta</h1>
-                <label for="txtEmail">
-                    <p>E-mail</p>
-                    <input type="email" id="txtEmail" name="txtEmail" placeholder="Insira seu e-mail...">
-                </label>
-                <div id="erroEmail"></div>
-                <label for="txtSenha">
-                    <p>Senha</p>
-                    <input type="password" id="txtSenha" name="txtSenha" placeholder="Insira sua senha...">
-                </label>
-                <div id="erroSenha"></div>
-                <label for="chkManterLogado">
-                    <input type="checkbox" id="chkManterLogado" name="chkManterLogado"><div class="manterLogado"><p>Manter logado?</p></div>
-                </label>
-                <div id="erro"></div>
-                <button type="button" onclick="validarLogin()">CONFIRMAR</button>
-                <div class="alternativas">
-                    <a href="trajeto.html"><p>Continuar sem se logar</p></a>
-                    <a href="cadastro.html"><p>Não tenho uma conta</p></a>
+            <div class="info_side">
+                <div class="banner"><img src="../assets/img/lapisAzul1_icon.png" alt="editar banner"></div>
+                <img src="../assets/img/bigUsuario.png" alt="foto do usuário">
+                <h2>Nome do Usuário</h2>
+            </div>
+            <div class="options_side">
+                <div class="btns">
+                    <input type="checkbox" id="localizacao" name="localizacao">
+                    <label for="localizacao" class="btn">
+                        <h3>Habilitar Localização</h3>
+                    </label>
+                    <label for="editar" class="btn">
+                        <h3>Editar perfil</h3>
+                        <img src="../assets/img/lapisVerde3_icon.png" alt="editar perfil">
+                        <input type="checkbox" id="editar" name="editar">
+                        <div class="editarPerfil">
+                            <label for="editar"><span></span><span></span></label>
+                            <label for="alterarNome">
+                                <p>Alterar nome:</p>
+                                <input type="text" id="alterarNome" name="alterarNome" placeholder="Altere seu nome...">
+                            </label>
+                            <button><h3>Confirmar</h3></button><br>
+                            <label for="editar">Cancelar</label>
+                        </div>
+                    </label>
                 </div>
-            </form>
+                <button>Sair da conta</button>
+            </div>
         </section>
     </main>
 
