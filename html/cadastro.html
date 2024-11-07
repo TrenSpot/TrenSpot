@@ -146,7 +146,9 @@
                     <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Confirme sua senha...">
                 </label>
                 <div id="erroConfirmarSenha"></div>
-                <div id="erro"></div>
+                <label for="chkManterLogado">
+                    <input type="checkbox" id="chkManterLogado" name="chkManterLogado"><div class="manterLogado"><p>Manter logado?</p></div>
+                </label>
                 <button type="button" onclick="validarCadastro()">CADASTRAR</button>
                 <div class="alternativas">
                     <a href="trajeto.html"><p>Continuar sem se logar</p></a>
@@ -192,40 +194,65 @@
     <!-- Script exclusivo da cadastro page -->
      <script>
         function validarCadastro(){
+            var nome = document.getElementById('txtNome');
             var email = document.getElementById('txtEmail');
             var senha = document.getElementById('txtSenha');
+            var confirmarSenha = document.getElementById('txtConfirmarSenha');
             var manterLogado = document.getElementById('chkManterLogado');
+            var erroNome = document.getElementById('erroNome');
             var erroEmail = document.getElementById('erroEmail');
             var erroSenha = document.getElementById('erroSenha');
-            var erro = document.getElementById('erro');
-        
-            if (email.value == ''){
-                erroEmail.innerText = 'Campo "e-mail" obrigatório';
-                email.focus();
+            var erroConfirmarSenha = document.getElementById('erroConfirmarSenha');
+            
+            if (nome.value == ''){
+                erroNome.innerText = 'Campo "nome" obrigatório';
+                nome.focus();
             }
             else{
-                erroEmail.innerText = ""
-                if(senha.value == ''){
-                    erroSenha.innerText = 'Campo "Senha" obrigatório';
-                    senha.focus();
+                erroNome.innerText = '';
+                if (email.value == ''){
+                    erroEmail.innerText = 'Campo "e-mail" obrigatório';
+                    email.focus();
                 }
                 else{
-                    erroSenha.innerText = ""
-                    if(email.value == localStorage.getItem('email') && senha.value == localStorage.getItem('senha') || email.value == sessionStorage.getItem('email') && senha.value == sessionStorage.getItem('senha')){
-                        if(manterLogado.checked){
-                            localStorage.setItem('logado','true');
-                        }
-                        else{
-                            sessionStorage.setItem('logado','true');
-                        }
-                        localStorage.setItem('msgErro','0') ;
-                        window.location.href = 'trajeto.html';
+                    erroEmail.innerText = "";
+                    if(senha.value == ''){
+                        erroSenha.innerText = 'Campo "Senha" obrigatório';
+                        senha.focus();
                     }
                     else{
-                        erro.innerText = "Email e/ou senha incorretos!"
+                        erroSenha.innerText = "";
+                        if(confirmarSenha.value == ''){
+                            erroConfirmarSenha.innerText = 'Confirme sua senha ';
+                            confirmarSenha.focus();
+                        }
+                        else{
+                            erroConfirmarSenha.innerText = "";
+                            if (senha.value != confirmarSenha.value){
+                                erroConfirmarSenha.innerText = 'Senhas não conferem';
+                                confirmarSenha.focus();
+                            }
+                            else{
+                                erroConfirmarSenha.innerText = '';
+                                if(manterLogado.checked){
+                                    localStorage.setItem('logado','true');
+                                }
+                                else{
+                                    sessionStorage.setItem('logado','true');
+                                }
+                                localStorage.setItem('nome', nome.value);
+                                localStorage.setItem('email', email.value);
+                                localStorage.setItem('senha', senha.value);
+                                localStorage.setItem('msgErro','0');
+                                window.location.href = 'trajeto.html';
+                            }
+                            
+                        }
                     }
+                   
                 }
             }
+            
         }
      </script>
 </body>

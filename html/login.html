@@ -204,18 +204,19 @@
                 }
                 else{
                     erroSenha.innerText = ""
-                    if(email.value == localStorage.getItem('email') && senha.value == localStorage.getItem('senha') || email.value == sessionStorage.getItem('email') && senha.value == sessionStorage.getItem('senha')){
+                    if(email.value == localStorage.getItem('email') && senha.value == localStorage.getItem('senha')){
                         if(manterLogado.checked){
                             localStorage.setItem('logado','true');
                         }
                         else{
                             sessionStorage.setItem('logado','true');
                         }
-                        localStorage.setItem('msgErro','0') ;
+                        localStorage.setItem('msgErro','0');
                         window.location.href = 'trajeto.html';
                     }
                     else{
                         erro.innerText = "Email e/ou senha incorretos!"
+                        senha.focus();
                     }
                 }
             }

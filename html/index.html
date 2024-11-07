@@ -25,10 +25,6 @@
             background-position: top left, bottom right;
             padding: auto;
         }
-        .wrapper_home a {
-            font-size: 20px;
-            font-family: 'MuseoModerno';
-        }
         .wrapper_home .main-logo {
             margin-top: auto;
             margin-bottom: 200px;
@@ -44,9 +40,9 @@
             font-weight: 600;
             transition: background-color 0.3s;
             margin-bottom: auto;
-        }
-        .locate-button > a {
             color: var(--amarelo2); 
+            font-size: 20px;
+            font-family: 'MuseoModerno';
         }
         .locate-button:hover {
             background-color: var(--azul2); 
@@ -85,8 +81,8 @@
         <section class="wrapper_home">
             <a name="home"></a>
             <img src="../assets/img/title_main.png" class="main-logo" alt="logo" title="logo">
-            <button class="locate-button" aria-label="Encontrar sua localização atual">
-                <a href="login.html">SE LOCALIZAR<br>AQUI <img src="../assets/img/loc_icon.png" alt="ícone de localização"></a>
+            <button onclick="primeiraVez()" class="locate-button" aria-label="Encontrar sua localização atual">
+                SE LOCALIZAR<br>AQUI <img src="../assets/img/loc_icon.png" alt="ícone de localização">
             </button>
         </section>
     </main>
@@ -126,6 +122,14 @@
 
     <!-- Script exclusivo da home page -->
      <script>
+        function primeiraVez() {
+            if (localStorage.getItem('logado') == 'true' || sessionStorage.getItem('logado') == 'true') {
+                window.location.href = 'trajeto.html'
+            }
+            else {
+                window.location.href = 'login.html'
+            }
+        }
      </script>
 </body>
 </html>

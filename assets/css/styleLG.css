@@ -20,7 +20,7 @@ header li div {
 .wrapper_home {
     background-size: 350px, 400px;
 }
-.wrapper_home .locate-button a {
+.wrapper_home .locate-button {
     font-size: 26px;
 }
 .wrapper_home button img{
