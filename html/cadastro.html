@@ -9,6 +9,89 @@
     <title>TrenSpot</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <!-- Estilo exclusivo da cadastro page (para não carregar em todas as páginas) -->
+    <style>
+        /* Corpo */
+        .wrapper_cadastro {
+            background-color: var(--verde1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: auto;
+            padding-bottom: 200px;
+        }
+        .wrapper_cadastro .logo-box {
+            width: 50%;
+            margin: 50px;
+        }
+        .logo-box img {
+            width: 100%;
+        }
+        .wrapper_cadastro form {
+            background-color: var(--verde3);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .wrapper_cadastro h1, .wrapper_cadastro p{
+            color: white;
+        }
+        .wrapper_cadastro h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .wrapper_cadastro label p {
+            font-weight:  500;
+            margin-left: 10px;
+        }
+        .wrapper_cadastro input {
+            border-radius: 20px;
+            padding: 5px 10px;
+            background-color: var(--azul1);
+            opacity: .75;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        .wrapper_cadastro #chkManterLogado {
+            display: none;
+        }
+        .wrapper_cadastro .manterLogado {
+            width: 295px;
+            display: flex;
+            background-color: var(--verde2);
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-weight: 500;
+            border: 5px solid var(--verde2);
+        }
+        #chkManterLogado:checked ~ .manterLogado {
+            background-color: var(--verde1);
+        }
+        .wrapper_cadastro form > div {
+            color: var(--amarelo1);
+            text-align: center;
+        }
+        .wrapper_cadastro button {
+            background-color: var(--amarelo1);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 0;
+            width: 50%;
+            margin: 50px 25%;
+            font-family: 'MuseoModerno';
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--verde3);
+        }
+        .alternativas p {
+            color: var(--amarelo1);
+            margin-bottom: 10px;
+        }
+        .alternativas a {
+            text-decoration: underline;
+            color: var(--amarelo1);
+        }
+    </style>
     <!-- Passando o tamanho das telas diretamente no link do CSS -->
     <link rel="stylesheet" href="../assets/css/styleSM.css" media="(max-width: 600px)">
     <link rel="stylesheet" href="../assets/css/styleMD.css" media="(min-width: 601px) and (max-width: 1024px)">
@@ -37,10 +120,39 @@
     </header>
     
     <!-- Conteúdo da página -->
-    <main>
+    <main class="main_cadastro">
         <!-- direcionar até o conteúdo -->
-        <section class="wrapper">
-        
+        <section class="wrapper_cadastro">
+            <div class="logo-box"><img src="../assets/img/title_main.png" class="main-logo" alt="logo" title="logo"></div>
+            <form>
+                <h1>Cadastre-se</h1>
+                <label for="txtNome">
+                    <p>Nome</p>
+                    <input type="text" id="txtNome" name="txtNome" placeholder="Insira seu nome...">
+                </label>
+                <div id="erroNome"></div>
+                <label for="txtEmail">
+                    <p>E-mail</p>
+                    <input type="email" id="txtEmail" name="txtEmail" placeholder="Insira seu e-mail...">
+                </label>
+                <div id="erroEmail"></div>
+                <label for="txtSenha">
+                    <p>Senha</p>
+                    <input type="password" id="txtSenha" name="txtSenha" placeholder="Insira sua senha...">
+                </label>
+                <div id="erroSenha"></div>
+                <label for="txtConfirmarSenha">
+                    <p>Confirmar senha</p>
+                    <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Confirme sua senha...">
+                </label>
+                <div id="erroConfirmarSenha"></div>
+                <div id="erro"></div>
+                <button type="button" onclick="validarCadastro()">CADASTRAR</button>
+                <div class="alternativas">
+                    <a href="trajeto.html"><p>Continuar sem se logar</p></a>
+                    <a href="login.html"><p>Voltar</p></a>
+                </div>
+            </form>
         </section>
     </main>
 
@@ -79,6 +191,42 @@
 
     <!-- Script exclusivo da cadastro page -->
      <script>
+        function validarCadastro(){
+            var email = document.getElementById('txtEmail');
+            var senha = document.getElementById('txtSenha');
+            var manterLogado = document.getElementById('chkManterLogado');
+            var erroEmail = document.getElementById('erroEmail');
+            var erroSenha = document.getElementById('erroSenha');
+            var erro = document.getElementById('erro');
+        
+            if (email.value == ''){
+                erroEmail.innerText = 'Campo "e-mail" obrigatório';
+                email.focus();
+            }
+            else{
+                erroEmail.innerText = ""
+                if(senha.value == ''){
+                    erroSenha.innerText = 'Campo "Senha" obrigatório';
+                    senha.focus();
+                }
+                else{
+                    erroSenha.innerText = ""
+                    if(email.value == localStorage.getItem('email') && senha.value == localStorage.getItem('senha') || email.value == sessionStorage.getItem('email') && senha.value == sessionStorage.getItem('senha')){
+                        if(manterLogado.checked){
+                            localStorage.setItem('logado','true');
+                        }
+                        else{
+                            sessionStorage.setItem('logado','true');
+                        }
+                        localStorage.setItem('msgErro','0') ;
+                        window.location.href = 'trajeto.html';
+                    }
+                    else{
+                        erro.innerText = "Email e/ou senha incorretos!"
+                    }
+                }
+            }
+        }
      </script>
 </body>
 </html>
