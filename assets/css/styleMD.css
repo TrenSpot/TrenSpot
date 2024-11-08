@@ -5,7 +5,7 @@ nav .small {
 
 /* Header */
 header li div {
-    font-size: 23px;
+    font-size: 20px;
 }
 
 /* ========= HOME ========= */
@@ -116,6 +116,9 @@ header li div {
         margin: 7px;
         transition: 0.3s;
      }
+     header li div{
+        font-size: 20px;
+    }
 }
 @media (max-width: 720px){
     nav img {
@@ -127,6 +130,6 @@ header li div {
         transition: 0.3s;
      }
      header li div{
-        font-size: 20px;
+        font-size: 16px;
     }
 }
