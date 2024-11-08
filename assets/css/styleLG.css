@@ -113,6 +113,20 @@ header li div {
     margin: 150px 0;
 }
 
+/* ========= QUEM SOMOS ========= */
+.wrapper_quemSomos {
+    width: 1000px;
+}
+.wrapper_quemSomos .par {
+    display: flex;
+}
+.wrapper_quemSomos .membro {
+    width: 500px;
+}
+.wrapper_quemSomos .membro:first-child {
+    margin-right: 20px;
+}
+
 /* Footer */
 .footer_col1 {
     width: 200px;
