@@ -70,7 +70,7 @@ header li div {
 }
 
 /* ========= PERFIL ========= */
-.main_perfil{
+.main_perfil {
     display: flex;
     margin: 100px 0;
 }
@@ -104,6 +104,7 @@ header li div {
     font-size: 30px;
 }
 .wrapper_perfil .info_side > img {
+    width: 250px;
     top: 250px;
     transform: translateX(-150%);
 }

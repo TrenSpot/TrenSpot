@@ -75,6 +75,37 @@ header li div {
     font-size: 20px;
 }
 
+/* ========= QUEM SOMOS ========= */
+.main_quemSomos h1 {
+    font-size: 50px;
+}
+.wrapper_quemSomos > h2 {
+    font-size: 30px;
+}
+.wrapper_quemSomos > p {
+    font-size: 22px;
+}
+.wrapper_quemSomos .membro .info {
+    width: 270px;
+}
+.wrapper_quemSomos .membro > img {
+    width: 150px;
+    height: 150px;
+}
+.wrapper_quemSomos .membro h3{
+    font-size: 22px;
+}
+.wrapper_quemSomos .membro p {
+    font-size: 19px;
+}
+.wrapper_quemSomos .membro .social_medias_membros img {
+    width: 25px;
+    margin-top: 5px;
+}
+.wrapper_quemSomos .membro a {
+    font-size: 16px;
+}
+
 /* Corrigindo alinhamento do menu em largura específica */
 @media (max-width: 800px){
     nav img {
