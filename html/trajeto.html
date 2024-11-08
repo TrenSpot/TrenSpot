@@ -23,7 +23,8 @@
         }
         .juncao .proximos .itens_box {
             display: flex;
-            height: 250px;
+            height: 200px;
+            align-items: center;
         }
         .juncao .proximos .item_proximos {
             width: 33%;
@@ -35,16 +36,19 @@
             align-items: center;
             text-align: center;
         }
+        .juncao .proximos .item_proximos h3 {
+            white-space: nowrap;
+        }
         .juncao .proximos .item_proximos img {
             border-radius: 10px;
-            width: 180px;
+            width: 150px;
             cursor: pointer;
         }
         .juncao .proximos .item_proximos .txt_proximos {
             background-color: rgba(12, 72, 71, .5);
             height: 45px;
             margin-top: -45px;
-            width: 180px;
+            width: 150px;
             border-bottom-left-radius: 12px;
             border-bottom-right-radius: 12px;
             font-size: 18px;
@@ -71,11 +75,66 @@
             text-align: center;
             padding: 50px 0;
             color: var(--verde3);
+            white-space: nowrap;
         }
         iframe {
             margin: 20px 2.5%;
             border-radius: 15px;
             width: 95%;
+        }
+        /* ========= Estação Atual ========= */
+        .estacao {
+            margin-top: 50px;
+            padding: 50px 0;
+            background-color: var(--azul1);
+        }
+        .header_estacao {
+            display: flex;
+            background-color: var(--azul1);
+            font-size: 20px;
+        }
+        .header_estacao h2 {    
+            color: var(--verde3);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .estacao .painel{
+            overflow-x: scroll;
+        }
+        .estacao .painel::-webkit-scrollbar {
+            display: none;
+        }
+        .estacao .painel img {
+            height: 100%;
+        }
+        .setas {
+            margin: 0 10px;
+            width: 100px;
+            display: flex;
+        }
+        .setas a {
+            margin-right: 10px;
+        }
+        .setas a:last-child img{
+            rotate: -90deg;
+        }
+        .setas a img {
+            width: 40px;
+            rotate: 90deg;
+        }
+        /* ========= Mapa do Metrô ========= */
+        .metro {
+            text-align: center;
+            padding: 50px 0;
+            color: var(--verde3);
+            font-size: 20px;
+            white-space: nowrap;
+        }
+        .metro img {
+            width: 90%;
+            margin-top: 50px;
         }
 
      </style>
@@ -121,30 +180,30 @@
                         <input type="checkbox" id="check1" class="hidden">
                         <div class="txt_proximos">
                             <h4>Restaurante do Camarão</h4>
-                            <p class="lgDevice">Restaurante do Camarão vende os melhores camarões da região. Venha conhecer nossos deliciosos camarões.</p>
                         </div>
                     </label>
+                    <p class="lgDevice">Restaurante do Camarão vende os melhores camarões da região. Venha conhecer nossos deliciosos camarões.</p>
                     <label for="check2" class="item_proximos"> 
                         <h3>Sobre esse local</h3>
                         <img src="../assets/img/cultura.png" alt="cultura">
                         <input type="checkbox" id="check2" class="hidden">
                         <div class="txt_proximos">
                             <h4>São Paulo</h4>
-                            <p class="lgDevice">Esta região foi a mais avançada infustrialmente durante a industrialização da cidade.</p>
                         </div>
-                    </label>                   
+                    </label>
+                    <p class="lgDevice">Esta região foi a mais avançada infustrialmente durante a industrialização da cidade.</p>                   
                     <label for="check3" class="item_proximos"> 
                         <h3>Eventos próximos</h3>
                         <img src="../assets/img/evento.png" alt="eventos">
                         <input type="checkbox" id="check3" class="hidden">
                         <div class="txt_proximos">
-                            <h4>Festa da Goiaba</h4>
-                            <p class="lgDevice">Aproveite neste fim de semana a festa da goiaba que acontecerá em frente a estação.</p>
+                            <h4>Festa da Goiaba</h4>                          
                         </div>
                     </label>
+                    <p class="lgDevice">Aproveite neste fim de semana a festa da goiaba que acontecerá em frente a estação.</p>
                     <a name="final_proximos" class="hidden"></a>
                 </div>
-                <div class="direcionar lgDevice">
+                <div class="hidden">
                     <a href="#inicio_proximos"><img src="../assets/img/seta.png"></a>
                     <a href="#final_proximos"><img src="../assets/img/seta.png"></a>
                 </div>
@@ -157,19 +216,22 @@
             </section>
         </div>
         <!--  ========= Estação Atual =========  -->
-        <section>
-            <div>
-                <div>
-                    <img src="../assets/img/seta.png">
-                    <img src="../assets/img/seta.png">
+        <section class="estacao">
+            <div class="header_estacao">
+                <div class="setas">
+                    <a href="#inicio_painel"><img src="../assets/img/seta.png"></a>
+                    <a href="#final_painel"><img src="../assets/img/seta.png"></a>
                 </div>
                 <h2>Estação Atual</h2>
-                <span></span>
             </div>
-            <div><img src="../assets/img/painel.png" alt="painel sinótipo"></div>
+            <div class="painel">
+                <a name="inicio_painel"></a>
+                <img src="../assets/img/painel.png" alt="painel sinótipo">
+                <a name="final_painel"></a>
+            </div>
         </section>
         <!--  ========= Mapa do Metrô =========  -->
-        <section>
+        <section class="metro">
             <h2>Mapa do Metrô</h2>
             <img src="../assets/img/metroSP.png" alt="mapa do metrô de São Paulo">
         </section>

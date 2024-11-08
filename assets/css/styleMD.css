@@ -105,6 +105,17 @@ header li div {
 .wrapper_quemSomos .membro a {
     font-size: 16px;
 }
+/* ========= TRAJETO ========= */
+.juncao .proximos .itens_box {
+    height: 250px;
+}
+.juncao .proximos .item_proximos img {
+    width: 180px;
+}
+.juncao .proximos .item_proximos .txt_proximos {
+    width: 180px; 
+}
+
 
 /* Corrigindo alinhamento do menu em largura específica */
 @media (max-width: 800px){

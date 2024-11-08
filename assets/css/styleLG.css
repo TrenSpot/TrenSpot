@@ -123,6 +123,27 @@ header li div {
 .wrapper_quemSomos .membro:first-child {
     margin-right: 20px;
 }
+/* ========= TRAJETO ========= */
+.estacao .painel img {
+    height: auto;
+    width: 100%;
+}
+.setas {
+    display: none;
+}
+.metro img {
+    width: 50%;
+}
+.lgDevice {
+    display: block;
+}
+.itens_box p {
+    width: 300px;
+    font-size: 18px;
+    text-align: justify;
+    color: var(--azul1);
+    font-weight: 500;
+}
 
 /* Footer */
 .footer_col1 {
@@ -138,3 +159,4 @@ header li div {
 .footer_col2 {
     width: 300px;
 }
+
