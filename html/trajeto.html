@@ -9,6 +9,65 @@
     <title>TrenSpot</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <!-- Estilização exclusiva da trajeto page -->
+     <style>
+        .juncao {
+            background-color: rgba(255, 179, 71, .75);
+        }
+        .juncao .proximos {
+            height: ;
+            width: 100%;
+            background-color: var(--verde1);
+            text-align: center;
+            color: var(--verde3);
+        }
+        .juncao .proximos .itens_box {
+            display: flex;
+            height: 250px;
+        }
+        .juncao .proximos .item_proximos {
+            width: 33%;
+            height: 100%;
+            color: var(--azul1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .juncao .proximos .item_proximos img {
+            border-radius: 10px;
+            width: 180px;
+            cursor: pointer;
+        }
+        .juncao .proximos .item_proximos .txt_proximos {
+            background-color: rgba(12, 72, 71, .5);
+            height: 45px;
+            margin-top: -45px;
+            width: 180px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            font-size: 18px;
+            opacity: 0;
+        }
+        #check1:checked + div {
+            opacity: 1;
+        }
+        #check2:checked + div {
+            opacity: 1;
+        }
+        #check3:checked + div {
+            opacity: 1;
+        }
+        .juncao .proximos .item_proximos h4 {
+            font-family: 'Roboto';
+        }
+        
+        .lgDevice, .hidden {
+            display: none;
+        }
+     </style>
+
     <!-- Passando o tamanho das telas diretamente no link do CSS -->
     <link rel="stylesheet" href="../assets/css/styleSM.css" media="(max-width: 600px)">
     <link rel="stylesheet" href="../assets/css/styleMD.css" media="(min-width: 601px)">
@@ -39,31 +98,42 @@
     <!-- Conteúdo da página -->
     <main>
         <div class="juncao">
-            <section>
+            <section class="proximos">
                 <h2>Próximos à Você</h2>
-                <div>
-                    <h3>Na localidade</h3>
-                    <div>
-                        <img src="../assets/img/restaurante.png" alt="promoções">
-                        <h4>Restaurante do Camarão</h4>
-                        <p>Restaurante do Camarão vende os melhores camarões da região. Venha conhecer nossos deliciosos camarões.</p>
-                    </div>
-                    <h3>Sobre esse local</h3>
-                    <div>
+                <div class="itens_box">
+                    <a name="inicio_proximos" class="hidden"></a>
+                    <label for="check1" class="item_proximos"> 
+                        <h3>Na localidade</h3>
+                        <img src="../assets/img/restaurante.png" alt="promoções">                     
+                        <input type="checkbox" id="check1" class="hidden">
+                        <div class="txt_proximos">
+                            <h4>Restaurante do Camarão</h4>
+                            <p class="lgDevice">Restaurante do Camarão vende os melhores camarões da região. Venha conhecer nossos deliciosos camarões.</p>
+                        </div>
+                    </label>
+                    <label for="check2" class="item_proximos"> 
+                        <h3>Sobre esse local</h3>
                         <img src="../assets/img/cultura.png" alt="cultura">
-                        <h4>São Paulo</h4>
-                        <p>Esta região foi a mais avançada infustrialmente durante a industrialização da cidade.</p>
-                    </div>
-                    <h3>Eventos próximos</h3>
-                    <div>
+                        <input type="checkbox" id="check2" class="hidden">
+                        <div class="txt_proximos">
+                            <h4>São Paulo</h4>
+                            <p class="lgDevice">Esta região foi a mais avançada infustrialmente durante a industrialização da cidade.</p>
+                        </div>
+                    </label>                   
+                    <label for="check3" class="item_proximos"> 
+                        <h3>Eventos próximos</h3>
                         <img src="../assets/img/evento.png" alt="eventos">
-                        <h4>Festa da Goiaba</h4>
-                        <p>Aproveite neste fim de semana a festa da goiaba que acontecerá em frente a estação.</p>
-                    </div>
+                        <input type="checkbox" id="check3" class="hidden">
+                        <div class="txt_proximos">
+                            <h4>Festa da Goiaba</h4>
+                            <p class="lgDevice">Aproveite neste fim de semana a festa da goiaba que acontecerá em frente a estação.</p>
+                        </div>
+                    </label>
+                    <a name="final_proximos" class="hidden"></a>
                 </div>
-                <div>
-                    <img src="../assets/img/seta.png">
-                    <img src="../assets/img/seta.png">
+                <div class="direcionar lgDevice">
+                    <a href="#inicio_proximos"><img src="../assets/img/seta.png"></a>
+                    <a href="#final_proximos"><img src="../assets/img/seta.png"></a>
                 </div>
             </section>
             <section class="wrapper">
