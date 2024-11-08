@@ -9,6 +9,72 @@
     <title>TrenSpot</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <!-- Estilização exclusiva da quem somos page -->
+    <style>
+        .main_quemSomos {
+            display: flex;
+            margin: 100px 0;
+            flex-direction: column;
+        }
+        .main_quemSomos h1 {
+            margin: 50px auto;
+            color: var(--verde3);
+        }
+        .wrapper_quemSomos {
+            background-color: var(--verde3);
+            padding: 20px;
+            border-radius: 10px;
+            color: var(--azul1);
+            text-align: center;
+            font-size: 12px;
+        }
+        .wrapper_quemSomos > h2 {
+            font-size: 25px;
+            font-weight: 500;
+        }
+        .wrapper_quemSomos > p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .wrapper_quemSomos .membro {
+            background-color: var(--azul1);
+            display: flex;
+            margin: 10px 0;
+            border-radius: 10px;
+            color: var(--verde1);
+            text-align: justify;
+        }
+        .wrapper_quemSomos .membro .info {
+            width: 200px;
+        }
+        .wrapper_quemSomos .membro > img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin: 10px;
+        }
+        .wrapper_quemSomos .membro h3, .wrapper_quemSomos .membro a {
+            color: var(--verde3);
+            font-family: 'Roboto';
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .wrapper_quemSomos .membro p {
+            margin: 10px;
+        }
+        .wrapper_quemSomos .membro .social_medias_membros img {
+            width: 15px;
+            margin-right: 10px;
+        }
+        .wrapper_quemSomos .membro a {
+            font-size: 14px;
+            margin: 0 10px;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+    </style>
+
     <!-- Passando o tamanho das telas diretamente no link do CSS -->
     <link rel="stylesheet" href="../assets/css/styleSM.css" media="(max-width: 600px)">
     <link rel="stylesheet" href="../assets/css/styleMD.css" media="(min-width: 601px) and (max-width: 1024px)">
@@ -37,16 +103,17 @@
     </header>
     
     <!-- Conteúdo da página -->
-    <main>
+    <main class="main_quemSomos">
         <!-- direcionar até o conteúdo -->
+        <h1>Quem Somos</h1>
         <section class="wrapper_quemSomos">
             <a name="quemSomos"></a>
-            <h1>Equipe do TrenSpot</h1>
+            <h2>Equipe do TrenSpot</h2>
             <p>Equipe 1TDSPS</p>
             <div class="membro">
                 <img src="../assets/img/bruno.jpeg" alt="Bruno Carlos Soares">
                 <div class="info">
-                    <h2>Bruno Carlos Soares</h2>
+                    <h3>Bruno Carlos Soares</h3>
                     <p>Po | UI/UX Desing | Front-end | Social Media<br>
                         RM: 559250</p>
                         <div class="social_medias_membros">   
@@ -58,7 +125,7 @@
             <div class="membro">
                 <img src="../assets/img/flavio.jpeg" alt="Flávio Patrício Felinto da Silva">
                 <div class="info">
-                    <h2>Flávio Patrício Felinto</h2>
+                    <h3>Flávio Patrício Felinto</h3>
                     <p>Scrum Master | Back-end | AI Developer<br>
                         RM: 560149</p>
                         <div class="social_medias_membros">   
@@ -71,7 +138,7 @@
                 <img src="../assets/img/vinicius.jpeg
                 " alt="Vinicius Rodrigues de Oliveira">
                 <div class="info">
-                    <h2>Vinicius Rodrigues</h2>
+                    <h3>Vinicius Rodrigues</h3>
                     <p>DBA | Back-end | Business Model Analyst<br>
                         RM: 559611</p>
                         <div class="social_medias_membros">   

@@ -68,6 +68,7 @@
             padding: 10px;
             color: var(--verde3);
             margin: 10px;
+            cursor: pointer;
         }
         .wrapper_perfil .options_side > button {
             font-size: 18px;
@@ -90,17 +91,21 @@
             font-weight: 600;
             text-decoration: underline;
             color: var(--verde3);
+            cursor: pointer;
         }
         .editarPerfil {
             display: none;
             position: fixed;
             left: 50%;
             transform: translateX(-50%);
+            top: 30%;
             background-color: var(--verde1);
             color: white;
             padding: 50px 20px;
             font-size: 20px;
             border-radius: 10px;
+            flex-direction: column;
+            text-align: center;
         }
         .editarPerfil span {
             position: absolute;
@@ -110,6 +115,7 @@
             height: 6px; 
             background-color: var(--verde3);
             transform: rotate(45deg);
+            cursor: pointer;
         }
         .editarPerfil span:last-child { 
             transform: rotate(-45deg);
@@ -140,9 +146,10 @@
             color: var(--verde3);
             font-size: 18px;
             margin: 50px 0 20px 0;
+            cursor: pointer;
         }
         #editar:checked ~ .editarPerfil {
-            display: block;
+            display: flex;
         }
         @media (max-width: 500px) {
             .btns {
@@ -169,7 +176,6 @@
         }
         else {
             sessionStorage.setItem('msgErro', '0');
-            
         }
     </script>
 
@@ -210,17 +216,17 @@
                     <label for="editar" class="btn">
                         <h3>Editar perfil</h3>
                         <img src="../assets/img/lapisVerde3_icon.png" alt="editar perfil">
-                        <input type="checkbox" id="editar" name="editar">
-                        <div class="editarPerfil">
-                            <label for="editar"><span></span><span></span></label>
-                            <label for="alterarNome">
-                                <p>Alterar nome:</p>
-                                <input type="text" id="alterarNome" name="alterarNome" placeholder="Altere seu nome...">
-                            </label>
-                            <button onclick="alterarNome()"><h3>Confirmar</h3></button><br>
-                            <label for="editar">Cancelar</label>
-                        </div>
                     </label>
+                    <input type="checkbox" id="editar" name="editar">
+                    <div class="editarPerfil">
+                        <label for="editar"><span></span><span></span></label>
+                        <label for="alterarNome">
+                            <p>Alterar nome:</p>
+                            <input type="text" id="alterarNome" name="alterarNome" placeholder="Altere seu nome...">
+                        </label>
+                        <button onclick="alterarNome()"><h3>Confirmar</h3></button><br>
+                        <label for="editar">Cancelar</label>
+                    </div>
                 </div>
                 <button onclick="sairConta()">Sair da conta</button>
             </div>

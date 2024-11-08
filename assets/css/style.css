@@ -73,6 +73,7 @@ nav div {
 header > button {
     background: none;
     border: none;
+    cursor: pointer;
 }
 header > button > img {
     width: 50px;
