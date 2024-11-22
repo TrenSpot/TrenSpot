@@ -7,7 +7,7 @@
     <meta name="description" content="TrenSpot: plataforma desenvolvida na FIAP que facilita a navegação no metrô com foco em inclusão social e conteúdos baseados na localização.">
     <meta name="keywords" content="Metro, Transporte, Localização">
     <title>TrenSpot</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Estilo exclusivo da home page (para não carregar em todas as páginas) -->
     <style>
@@ -19,8 +19,8 @@
             flex-direction: column;
             align-items: center;
             background-image: 
-                url(../assets/img/trilhos_bg1.png), 
-                url(../assets/img/trilhos_bg2.png); 
+                url(assets/img/trilhos_bg1.png), 
+                url(assets/img/trilhos_bg2.png); 
             background-repeat: no-repeat, no-repeat; 
             background-position: top left, bottom right;
             padding: auto;
@@ -49,29 +49,29 @@
         }
     </style>
     <!-- Passando o tamanho das telas diretamente no link do CSS -->
-    <link rel="stylesheet" href="../assets/css/styleSM.css" media="(max-width: 600px)">
-    <link rel="stylesheet" href="../assets/css/styleMD.css" media="(min-width: 601px)">
-    <link rel="stylesheet" href="../assets/css/styleLG.css" media="(min-width: 1025px)">    
-    <link rel="shortcut icon" href="../assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/styleSM.css" media="(max-width: 600px)">
+    <link rel="stylesheet" href="assets/css/styleMD.css" media="(min-width: 601px)">
+    <link rel="stylesheet" href="assets/css/styleLG.css" media="(min-width: 1025px)">    
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
 </head>
 
 <!-- Corpo do Site -->
 <body>
     <!-- Cabeçalho -->
     <header role="banner">  
-        <a href="#home" class="logo"><img src="../assets/img/logo_header.png" alt="logo" title="logo"></a>
+        <a href="#home" class="logo"><img src="assets/img/logo_header.png" alt="logo" title="logo"></a>
         <span></span>
         <input type="checkbox" id="menu_toggle">
         <nav role="navigation">
             <ul>
                 <label for="menu_toggle"><span></span><span></span></label>
-                <li><a href="#home"><div><img src="../assets/img/home_icon.png" alt="Home">Home</div></a></li>
-                <li><a href="html/trajeto.html"><div><img src="../assets/img/loc_icon.png" alt="localizar">Trajeto</div></a></li>
-                <li class="small"><a href="html/perfil.html"><div><img src="../assets/img/perfil_icon.png" alt="perfil">Perfil</div></a></li>
-                <li><a href="html/quem_somos.html"><div><img src="../assets/img/quemSomos_icon.png" alt="quem somos">Quem Somos</div></a></li>
+                <li><a href="#home"><div><img src="assets/img/home_icon.png" alt="Home">Home</div></a></li>
+                <li><a href="html/trajeto.html"><div><img src="assets/img/loc_icon.png" alt="localizar">Trajeto</div></a></li>
+                <li class="small"><a href="html/perfil.html"><div><img src="assets/img/perfil_icon.png" alt="perfil">Perfil</div></a></li>
+                <li><a href="html/quem_somos.html"><div><img src="assets/img/quemSomos_icon.png" alt="quem somos">Quem Somos</div></a></li>
             </ul>
         </nav>
-        <button onclick="validarUsuário()"><img src="../assets/img/usuario.png" alt="perfil" title="perfil"></button>
+        <button onclick="validarUsuário()"><img src="assets/img/usuario.png" alt="perfil" title="perfil"></button>
         <label for="menu_toggle" class="menu_btn"><span></span></label>
     </header>
     
@@ -80,9 +80,9 @@
         <!-- direcionar até o conteúdo -->
         <section class="wrapper_home">
             <a name="home"></a>
-            <img src="../assets/img/title_main.png" class="main-logo" alt="logo" title="logo">
+            <img src="assets/img/title_main.png" class="main-logo" alt="logo" title="logo">
             <button onclick="primeiraVez()" class="locate-button" aria-label="Encontrar sua localização atual">
-                SE LOCALIZAR<br>AQUI <img src="../assets/img/loc_icon.png" alt="ícone de localização">
+                SE LOCALIZAR<br>AQUI <img src="assets/img/loc_icon.png" alt="ícone de localização">
             </button>
         </section>
     </main>
@@ -92,16 +92,16 @@
             <div class="cols">
             <!-- primeira coluna -->
             <div class="footer_col1">
-                <a href="#home"><img src="../assets/img/logo_rodape.png" alt="logo" title="logo"></a>
+                <a href="#home"><img src="assets/img/logo_rodape.png" alt="logo" title="logo"></a>
                 <div class="social_medias">
                     <a href="https://www.instagram.com/invites/contact/?igsh=i3925y7rnona&utm_content=w0soki" target="_blank" aria-label="Instagram TrenSpot">
-                        <img src="../assets/img/instagram_logo.png" alt="instagram" title="instagram">
+                        <img src="assets/img/instagram_logo.png" alt="instagram" title="instagram">
                     </a>
                     <a href="mailto:trenspot3@gmail.com" target="_blank" aria-label="Email TrenSpot">
-                        <img src="../assets/img/email_logo.png" alt="email" title="email">
+                        <img src="assets/img/email_logo.png" alt="email" title="email">
                     </a>
                     <a href="https://github.com/TrenSpot" target="_blank" aria-label="GitHub TrenSpot">
-                        <img src="../assets/img/github_logo.png" alt="GitHub" title="GitHub">
+                        <img src="assets/img/github_logo.png" alt="GitHub" title="GitHub">
                     </a>
                 </div>
             </div>
@@ -118,7 +118,7 @@
     </footer>
 
     <!-- Script -->
-    <script src="../assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
     <!-- Script exclusivo da home page -->
      <script>
